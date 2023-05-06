@@ -8,7 +8,7 @@ fs.promises.readdir(folder)
     files.forEach(file => {
       fs.stat(path.join(__dirname, 'secret-folder', file), (err, stats) => {
         if (err) console.log(err);
-        if (stats.isFile()) console.log(`${file.split('.')[0]} - ${file.split('.')[1]} - ${Math.round(stats.size / 1000)}kb`);
+        if (stats.isFile()) console.log(`${file.split('.')[0]} - ${file.split('.')[1]} - ${stats.size}b`);
       });
     });
   })
